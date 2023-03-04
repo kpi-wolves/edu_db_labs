@@ -55,7 +55,12 @@
 
 ### Посилання
 
-*[Розділ містить повний список всіх документів, про які згадується.]*
+https://issuu.com/instituteofjournalusm/docs/mediacontent_book
+https://www.philol.vernadskyjournals.in.ua/journals/2020/3_2020/part_3/35.pdf
+https://ispp.org.ua/2021/12/20/metodichni-rekomendaciii-mediakontent-yak-zasib-rozvitku-gromadyanskoii-kompetentnosti-molodi/
+https://elibrary.kubg.edu.ua/id/eprint/39862/1/N_Zrazhevska_Teor_medii_2021_IJ.pdf
+https://kubg.edu.ua/images/stories/Departaments/nmc.nd/student_nauka/2017-2018/roboty/%D1%81%D1%83%D1%87%D0%B0%D1%81%D0%BD%D0%B0%20%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%96%D1%81%D1%82%D0%B8%D0%BA%D0%B0.pdf
+https://moodle.znu.edu.ua/pluginfile.php/342093/mod_resource/content/1/%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D0%B0%20%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B8_IREX_ZNU.pdf
 
 
 ## Короткий зміст
