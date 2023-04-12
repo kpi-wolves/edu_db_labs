@@ -1,149 +1,113 @@
 # Модель прецедентів
 
-В цьому файлі необхідно перелічити всі документи, розроблені в проекті та дати посилання на них.
-
-*Модель прецедентів повинна містити загальні оглядові діаграми та специфікації прецедентів.*
-
-
-
-Вбудовування зображень діаграм здійснюється з використанням сервісу [plantuml.com](https://plantuml.com/). 
-
-В markdown-файлі використовується опис діаграми
-
-```md
+## 1. Діаграма прецендентів
 
 <center style="
-    border-radius:4px;
     border: 1px solid #cfd7e6;
     box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
     padding: 1em;"
 >
 
 @startuml
-
-    right header
-        <font size=24 color=black>Package: <b>UCD_3.0
-    end header
-
-    title
-        <font size=18 color=black>UC_8. Редагувати конфігурацію порталу
-        <font size=16 color=black>Діаграма прецедентів
-    end title
-
-
+    actor "Гість" as Guest #eeeeaa
     actor "Користувач" as User #eeeeaa
+    actor "Адміністратор" as Admin #eeeeaa
     
-    package UCD_1{
-        usecase "<b>UC_1</b>\nПереглянути список \nзвітів" as UC_1 #aaeeaa
-    }
+    usecase "<b>Реєстрація</b>" as UC_1
+    usecase "<b>Авторизація</b>" as UC_2
+    usecase "<b>Перегляд історії запитів</b>" as UC_3
+    usecase "<b>Створення нового запиту на аналіз</b>" as UC_4
+    usecase "<b>Видалення запиту на аналіз</b>" as UC_5
+    usecase "<b>Видалення облікового запису</b>" as UC_6
+    usecase "<b>Перегляд даних для відладки</b>" as UC_7
+    usecase "<b>Перегляд облікового запису користувача</b>" as UC_8
     
-    usecase "<b>UC_1.1</b>\nЗастосувати фільтр" as UC_1.1
-    usecase "<b>UC_1.2</b>\nПереглянути метадані \nзвіту" as UC_1.2  
-    usecase "<b>UC_1.2.1</b>\nДати оцінку звіту" as UC_1.2.1  
-    usecase "<b>UC_1.2.2</b>\nПереглянути інформацію \nпро авторів звіту" as UC_1.2.2
-    
-    package UCD_1 {
-        usecase "<b>UC_4</b>\nВикликати звіт" as UC_4 #aaeeaa
-    }
-    
-    usecase "<b>UC_1.1.1</b>\n Використати \nпошукові теги" as UC_1.1.1  
-    usecase "<b>UC_1.1.2</b>\n Використати \nрядок пошуку" as UC_1.1.2
-    usecase "<b>UC_1.1.3</b>\n Використати \nавторів" as UC_1.1.3  
-    
-    
-    
-    User -> UC_1
-    UC_1.1 .u.> UC_1 :extends
-    UC_1.2 .u.> UC_1 :extends
-    UC_4 .d.> UC_1.2 :extends
-    UC_1.2 .> UC_1.2 :extends
-    UC_1.2.1 .u.> UC_1.2 :extends
-    UC_1.2.2 .u.> UC_1.2 :extends
-    UC_1 ..> UC_1.2.2 :extends
-    
-    
-    UC_1.1.1 -u-|> UC_1.1
-    UC_1.1.2 -u-|> UC_1.1
-    UC_1.1.3 -u-|> UC_1.1
-    
-    right footer
-        Аналітичний портал. Модель прецедентів.
-        НТУУ КПІ ім.І.Сікорського
-        Киів-2020
-    end footer
-
+    Guest -u-|> User
+    User -u-|> Admin 
+    Guest --> UC_1   
+    Guest --> UC_2
+    User --> UC_3
+    User --> UC_4
+    User --> UC_5
+    Admin --> UC_6
+    Admin --> UC_7
+    Admin --> UC_8
 @enduml
 
 **Діаграма прецедентів**
 
 </center>
-```
 
-яка буде відображена наступним чином
+## 2. Use Cases для гостя
 
 <center style="
-    border-radius:4px;
     border: 1px solid #cfd7e6;
     box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
     padding: 1em;"
 >
 
 @startuml
-
-    right header
-        <font size=24 color=black>Package: <b>UCD_3.0
-    end header
-
-    title
-        <font size=18 color=black>UC_8. Редагувати конфігурацію порталу
-        <font size=16 color=black>Діаграма прецедентів
-    end title
-
-
-    actor "Користувач" as User #eeeeaa
+    actor "Гість" as Guest #eeeeaa
     
-    package UCD_1{
-        usecase "<b>UC_1</b>\nПереглянути список \nзвітів" as UC_1 #aaeeaa
-    }
+    usecase "<b>Реєстрація</b>" as REGISTRATION
+    usecase "<b>Авторизація</b>" as AUTHORIZATION
+    usecase "<b>Відновити пароль</b>" as RESTORE_PASSWORD
     
-    usecase "<b>UC_1.1</b>\nЗастосувати фільтр" as UC_1.1
-    usecase "<b>UC_1.2</b>\nПереглянути метадані \nзвіту" as UC_1.2  
-    usecase "<b>UC_1.2.1</b>\nДати оцінку звіту" as UC_1.2.1  
-    usecase "<b>UC_1.2.2</b>\nПереглянути інформацію \nпро авторів звіту" as UC_1.2.2
-    
-    package UCD_1 {
-        usecase "<b>UC_4</b>\nВикликати звіт" as UC_4 #aaeeaa
-    }
-    
-    usecase "<b>UC_1.1.1</b>\n Використати \nпошукові теги" as UC_1.1.1  
-    usecase "<b>UC_1.1.2</b>\n Використати \nрядок пошуку" as UC_1.1.2
-    usecase "<b>UC_1.1.3</b>\n Використати \nавторів" as UC_1.1.3  
-    
-    
-    
-    User -> UC_1
-    UC_1.1 .u.> UC_1 :extends
-    UC_1.2 .u.> UC_1 :extends
-    UC_4 .d.> UC_1.2 :extends
-    UC_1.2 .> UC_1.2 :extends
-    UC_1.2.1 .u.> UC_1.2 :extends
-    UC_1.2.2 .u.> UC_1.2 :extends
-    UC_1 ..> UC_1.2.2 :extends
-    
-    
-    UC_1.1.1 -u-|> UC_1.1
-    UC_1.1.2 -u-|> UC_1.1
-    UC_1.1.3 -u-|> UC_1.1
-    
-    right footer
-        Аналітичний портал. Модель прецедентів.
-        НТУУ КПІ ім.І.Сікорського
-        Киів-2020
-    end footer
-
+    Guest --> REGISTRATION   
+    Guest --> AUTHORIZATION
+    RESTORE_PASSWORD ...> AUTHORIZATION: extends
 @enduml
 
-**Діаграма прецедентів**
+**Use Cases для гостя**
 
 </center>
 
+## 3. Use Cases для адміністратора
+
+<center style="
+    border: 1px solid #cfd7e6;
+    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
+    padding: 1em;"
+>
+
+@startuml
+    actor "Адміністратор" as Admin #eeeeaa
+    
+    usecase "<b>Видалення облікового запису</b>" as REMOVE_USER
+    usecase "<b>Перегляд даних для відладки</b>" as VIEW_REQUEST_DEBUG_DATA
+    usecase "<b>Перегляд облікового запису користувача</b>" as VIEW_USER_ACCOUNT
+    
+    Admin --> REMOVE_USER   
+    Admin --> VIEW_REQUEST_DEBUG_DATA
+    Admin --> VIEW_USER_ACCOUNT
+@enduml
+
+**Use Cases для адміністратора**
+
+</center>
+
+## 4. Use Cases для клієнта 
+
+<center style="
+    border: 1px solid #cfd7e6;
+    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
+    padding: 1em;"
+>
+
+@startuml
+    actor "Клієнт" as User #eeeeaa
+    
+    usecase "<b>Перегляд історії запитів</b>" as VIEW_HISTORY
+    usecase "<b>Створення нового запиту на аналіз</b>" as MAKE_REQUEST
+    usecase "<b>Видалення запиту на аналіз</b>" as DELETE_REQUEST
+    
+    User --> VIEW_HISTORY   
+    User --> MAKE_REQUEST
+    User --> DELETE_REQUEST
+@enduml
+
+**Use Cases для клієнта**
+
+</center>
+
+## 5. Сценарії
