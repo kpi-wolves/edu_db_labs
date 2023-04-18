@@ -11,6 +11,7 @@ entity Done
 entity Canceled
 
 entity Author
+entity Author.id
 entity Author.sex
 entity Author.geolocation
 entity Author.age
@@ -53,6 +54,7 @@ User *-- User.userName
 Role *-- Role.id
 Role *-- Role.displayText
 
+Author *-- Author.id
 Author *-- Author.sex
 Author *-- Author.geolocation
 Author *-- Author.age
