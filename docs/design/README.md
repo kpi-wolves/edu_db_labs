@@ -63,3 +63,9 @@ Role "1, 1" <-- "0, *" User
 User "1, 1" <-- "0, *" Research
 
 @enduml
+
+## Реляційна схема
+
+<center style="margin-top: 16px">
+  <img style="max-width: 420px" alt="" src="./img/relationScheme.png" />
+</center>
