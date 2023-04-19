@@ -4,10 +4,31 @@
 
 @startuml
 
-entity Research
-entity Research.id
-entity Research.results
-entity Research.isDone
+entity Status
+entity Grabbing
+entity Pending
+entity Done
+entity Canceled
+
+entity Author
+entity Author.id
+entity Author.sex
+entity Author.geolocation
+entity Author.age
+
+entity Post
+entity Post.id
+entity Post.url
+entity Post.dateOfPublication
+entity Post.weight
+entity Post.tonality
+
+entity Study
+entity Study.id
+entity Study.verdict
+entity Study.mentions
+entity Study.authors
+entity Study.engagement
 
 entity User
 entity User.email
@@ -19,6 +40,12 @@ entity Role
 entity Role.displayText
 entity Role.id
 
+Post *-- Post.id
+Post *-- Post.url
+Post *-- Post.dateOfPublication
+Post *-- Post.weight
+Post *-- Post.tonality
+
 User *-- User.email
 User *-- User.password
 User *-- User.id
@@ -27,13 +54,27 @@ User *-- User.userName
 Role *-- Role.id
 Role *-- Role.displayText
 
-Research *-- Research.id
-Research *-- Research.results
-Research *-- Research.isDone
-Research *-- Research.debuggerData
+Author *-- Author.id
+Author *-- Author.sex
+Author *-- Author.geolocation
+Author *-- Author.age
+
+Study *-- Study.id
+Study *-- Study.verdict
+Study *-- Study.mentions
+Study *-- Study.authors
+Study *-- Study.engagement
+
+Grabbing -u-|> Status
+Pending -u-|> Status
+Done -u-|> Status
+Canceled -u-|> Status
 
 User "0,*" -- "1,1" Role 
-User "1,1" -- "0,*" Research
+User "1,1" -- "0,*" Study
+Study "1,1" -- "0,*" Post
+Study "1,1" -- "0,*" Author
+Study "1,1" -- "0,1" Status
 
 @enduml
 
@@ -52,14 +93,37 @@ entity User {
   userName: TEXT  
 }
 
-entity Research  {  
+entity Study  {  
   id: INT  
-  results: OBJECT
-  debuggerData: OBJECT
-  isDone: BOOLEAN
+  verdict: TEXT
+  mentions: INT
+  authors: INT
+  engagement: INT
+}
+
+entity Post {
+  id: INT
+  url: TEXT
+  dateOfPublication: DATETIME
+  weight: FLOAT
+  tonality: FLOAT
+}
+
+entity Status <<ENUMERATION>>{
+  id: INT
+  displayText: TEXT
+}
+
+entity Author {
+  sex: INT
+  geolocation: TEXT
+  age: INT
 }
 
 Role "1, 1" <-- "0, *" User  
-User "1, 1" <-- "0, *" Research
+User "1, 1" <-- "0, *" Study
+Study "1, 1" <-- "0, *" Post
+Study "1, 1" <-- "0, *" Author
+Study "1,1" <-- "0,1" Status
 
 @enduml
