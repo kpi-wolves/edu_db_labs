@@ -127,3 +127,9 @@ Study "1, 1" <-- "0, *" Author
 Study "1,1" <-- "0,1" Status
 
 @enduml
+
+## Реляційна схема
+
+<center style="margin-top: 16px">
+  <img style="max-width: 420px" alt="" src="./img/relationScheme.png" />
+</center>
