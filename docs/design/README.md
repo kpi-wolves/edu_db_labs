@@ -101,14 +101,16 @@ entity Study  {
 entity Post {
   id: INT
   url: TEXT
-  dateOfPublication: DATETIME
+  date_of_publication: DATETIME
   weight: FLOAT
   tonality: FLOAT
 }
 
 entity Status <<ENUMERATION>>{
-  id: INT
-  displayText: TEXT
+  Grabbing,
+  Pending,
+  Canceled,
+  Done
 }
 
 entity Author {
