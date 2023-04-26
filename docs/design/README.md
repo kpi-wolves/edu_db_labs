@@ -114,6 +114,7 @@ entity Status <<ENUMERATION>>{
 }
 
 entity Author {
+  id: INT
   sex: INT
   geolocation: TEXT
   age: INT
