@@ -19,7 +19,7 @@ entity Author.age
 entity Post
 entity Post.id
 entity Post.url
-entity Post.dateOfPublication
+entity Post.date_of_publication
 entity Post.weight
 entity Post.tonality
 
@@ -33,7 +33,7 @@ entity User
 entity User.email
 entity User.password
 entity User.id
-entity User.userName
+entity User.user_name
 
 entity Role
 entity Role.name
@@ -41,14 +41,14 @@ entity Role.id
 
 Post *-- Post.id
 Post *-- Post.url
-Post *-- Post.dateOfPublication
+Post *-- Post.date_of_publication
 Post *-- Post.weight
 Post *-- Post.tonality
 
 User *-- User.email
 User *-- User.password
 User *-- User.id
-User *-- User.userName
+User *-- User.user_name
 
 Role *-- Role.id
 Role *-- Role.name
@@ -88,7 +88,7 @@ entity User {
   id: INT 
   email: TEXT 
   password: TEXT 
-  userName: TEXT  
+  user_name: TEXT  
 }
 
 entity Study  {  
