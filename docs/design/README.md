@@ -131,5 +131,5 @@ Study "1,1" <-- "0,1" Status
 ## Реляційна схема
 
 <center style="margin-top: 16px">
-  <img style="max-width: 420px" alt="" src="./img/relationScheme.png" />
+  <img alt="" src="./img/relationScheme.png" />
 </center>
