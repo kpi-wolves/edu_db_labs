@@ -37,7 +37,7 @@ entity User.id
 entity User.userName
 
 entity Role
-entity Role.displayText
+entity Role.name
 entity Role.id
 
 Post *-- Post.id
@@ -52,7 +52,7 @@ User *-- User.id
 User *-- User.userName
 
 Role *-- Role.id
-Role *-- Role.displayText
+Role *-- Role.name
 
 Author *-- Author.id
 Author *-- Author.sex
@@ -83,7 +83,7 @@ Study "1,1" -- "0,1" Status
 
 entity Role  {
   id: INT 
-  displayText: TEXT 
+  name: TEXT 
 }
 
 entity User { 
