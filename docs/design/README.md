@@ -25,7 +25,6 @@ entity Post.tonality
 
 entity Study
 entity Study.id
-entity Study.verdict
 entity Study.mentions
 entity Study.authors
 entity Study.engagement
@@ -60,7 +59,6 @@ Author *-- Author.geolocation
 Author *-- Author.age
 
 Study *-- Study.id
-Study *-- Study.verdict
 Study *-- Study.mentions
 Study *-- Study.authors
 Study *-- Study.engagement
@@ -95,7 +93,6 @@ entity User {
 
 entity Study  {  
   id: INT  
-  verdict: TEXT
   mentions: INT
   authors: INT
   engagement: INT
