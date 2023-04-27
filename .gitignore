@@ -106,3 +106,5 @@ dist
 # Intellij IDEA
 .idea/
 *.iml
+
+.DS_Store

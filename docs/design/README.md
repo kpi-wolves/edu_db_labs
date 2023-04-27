@@ -19,13 +19,12 @@ entity Author.age
 entity Post
 entity Post.id
 entity Post.url
-entity Post.dateOfPublication
+entity Post.date_of_publication
 entity Post.weight
 entity Post.tonality
 
 entity Study
 entity Study.id
-entity Study.verdict
 entity Study.mentions
 entity Study.authors
 entity Study.engagement
@@ -34,25 +33,25 @@ entity User
 entity User.email
 entity User.password
 entity User.id
-entity User.userName
+entity User.user_name
 
 entity Role
-entity Role.displayText
+entity Role.name
 entity Role.id
 
 Post *-- Post.id
 Post *-- Post.url
-Post *-- Post.dateOfPublication
+Post *-- Post.date_of_publication
 Post *-- Post.weight
 Post *-- Post.tonality
 
 User *-- User.email
 User *-- User.password
 User *-- User.id
-User *-- User.userName
+User *-- User.user_name
 
 Role *-- Role.id
-Role *-- Role.displayText
+Role *-- Role.name
 
 Author *-- Author.id
 Author *-- Author.sex
@@ -60,7 +59,6 @@ Author *-- Author.geolocation
 Author *-- Author.age
 
 Study *-- Study.id
-Study *-- Study.verdict
 Study *-- Study.mentions
 Study *-- Study.authors
 Study *-- Study.engagement
@@ -83,19 +81,18 @@ Study "1,1" -- "0,1" Status
 
 entity Role  {
   id: INT 
-  displayText: TEXT 
+  name: TEXT 
 }
 
 entity User { 
   id: INT 
   email: TEXT 
   password: TEXT 
-  userName: TEXT  
+  user_name: TEXT  
 }
 
 entity Study  {  
   id: INT  
-  verdict: TEXT
   mentions: INT
   authors: INT
   engagement: INT
@@ -104,17 +101,20 @@ entity Study  {
 entity Post {
   id: INT
   url: TEXT
-  dateOfPublication: DATETIME
+  date_of_publication: DATETIME
   weight: FLOAT
   tonality: FLOAT
 }
 
 entity Status <<ENUMERATION>>{
-  id: INT
-  displayText: TEXT
+  Grabbing,
+  Pending,
+  Canceled,
+  Done
 }
 
 entity Author {
+  id: INT
   sex: INT
   geolocation: TEXT
   age: INT
@@ -131,5 +131,5 @@ Study "1,1" <-- "0,1" Status
 ## Реляційна схема
 
 <center style="margin-top: 16px">
-  <img style="max-width: 420px" alt="" src="./img/relationScheme.png" />
+  <img alt="" src="./img/relationScheme.png" />
 </center>
