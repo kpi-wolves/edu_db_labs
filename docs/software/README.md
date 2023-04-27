@@ -4,11 +4,13 @@
 
 <style>
   .codeFile {
-    background-color: #EEE;
-    border-bottom: solid 1px #BDBDBD;
-    font-style: italic; 
-    padding: 8px 16px; 
+    background-color: #282c34;
+    color: white;
+    border: solid 1px #282c34;
+    padding: 16px;
     font-family: "Menlo", monospace;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: -17px;
   }
 </style>
 
