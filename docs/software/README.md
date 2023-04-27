@@ -233,10 +233,14 @@ export class UserController {
     }
   }
 
+
   remove: Handler = async (req, res) => {
     try {
-      const results = await this.repository.delete(req.params.id);
-      res.json(results);
+      const { id } = req.params;
+      await this.repository.delete(id);
+      res.json({
+        message: `A user with id ${id} was removed`,
+      });
     } catch (e) {
       this.errorHandler(e, res);
     }
