@@ -59,15 +59,21 @@ export class UserController {
   errorHandler = (e: Error, res: Response) => {
     switch (e.constructor) {
       case EntityNotFoundError:
-        res.status(404).send();
+        res.status(404).json({
+          errorMessage: "Not Found",
+        });
         break;
 
       case QueryFailedError:
-        res.status(400).send();
+        res.status(400).json({
+          errorMessage: "Bad request",
+        });
         break;
       
       default:
-        res.status(500).send();
+        res.status(500).send({
+          errorMessage: "An unknown error",
+        });
         break;
     }
   }
