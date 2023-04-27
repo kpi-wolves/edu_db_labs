@@ -40,10 +40,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `mydb`.`users` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`users` (
-  `id` INT GENERATED ALWAYS AS (),
-  `uesr_name` TEXT NOT NULL,
-  `email` TEXT NOT NULL,
+CREATE TABLE `mydb`.`users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_name` TEXT NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
   `password` TEXT NOT NULL,
   `role_id` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
@@ -55,7 +55,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`users` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `mydb`.`studies`
